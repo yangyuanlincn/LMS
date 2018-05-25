@@ -7,3 +7,52 @@
 <link rel="stylesheet" rev="stylesheet" type="text/css" href="${ctx}/skin/default/css/default.css" media="all"/>
 <link rel="stylesheet" rev="stylesheet" type="text/css" href="${ctx}/skin/default/css/table.css" media="all"/>
 <script language="javascript" src="${ctx}/js/common.js"></script>
+<script language="javascript" src="${ctx}/js/jquery-1.11.3.min.js"></script>
+<script>
+	     function isOnlyChecked(){
+	    	 var checkBoxArray = document.getElementsByName('id');
+				var count=0;
+				for(var index=0; index<checkBoxArray.length; index++) {
+					if (checkBoxArray[index].checked) {
+						count++;
+					}	
+				}
+			//jquery
+			//var count = $("[input name='id']:checked").size();
+			if(count==1)
+				return true;
+			else
+				return false;
+	     }
+	     function isChecked(){
+	    	 var count = $("input[name='id']:checked").size();
+	    	 if(count>0){
+	    		 return true;
+	    	 }else{
+	    		 return false;
+	    	 }
+	     }
+	     function toView(url,target){
+	    	 if(isOnlyChecked()){
+	    		 formSubmit(url,target);
+	    	 }else{
+	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
+	    	 }
+	     }
+	     //实现更新
+	     function toUpdate(url,target){
+	    	 if(isOnlyChecked()){
+	    		 formSubmit(url,target);
+	    	 }else{
+	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
+	    	 }
+	     }
+	     function toDelete(url,target){
+	    	 if(isChecked()){
+	    		 formSubmit(url,target)
+	    	 }else{
+	    		 alert("请先选择一项或多项");
+	    	 }
+	    	 	
+	     }
+	</script>

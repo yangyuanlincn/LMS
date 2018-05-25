@@ -1,34 +1,22 @@
-﻿/**
- * 
- */
 package com.linn.heima.domain;
 
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @description:
- * @author 传智.宋江
- * @date 2016年2月26日
- * @version 1.0
- * 
- * PO类规范：
- * 1.是一个公有类
- * 2.属性私有
- * 3.提供属性的公有的getter与setter
- * 4.存在一个公有的无参构造
- * 5.不能使用final修饰
- * 6.一般都实现java.io.Serializable接口
- * 7.如果是基本类型，请使用它们的包装类
- */
 public class Dept implements Serializable {
 	private String id;
-	private String deptName;
-	private Dept parent;//父部门   自关联   子部门与父部门   多对一关系
+	private String deptName;//部门名称
+	private Dept parent; //父部门  自关联  子部门与父部门     多对一
+	private Integer state;//状态    1代表启用    0代表停用
+	private Set<User> users=new HashSet<User>(0);
 	
-	private Integer state;  //状态  1启用0停用 默认为1
-	
+	public Set<User> getUsers() {
+		return users;
+	}
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
 	public String getId() {
 		return id;
 	}
@@ -54,6 +42,4 @@ public class Dept implements Serializable {
 		this.state = state;
 	}
 	
-    
-	 
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.linn.heima.domain">
+	<class name="UserInfo" table="USER_INFO_P" dynamic-insert="true" dynamic-update="true">
+	
+	
+		<id name="id" column="USER_INFO_ID">
+			<!--hibernate主键生成策略：native, increment,sequence,uuid,assigned,identity  -->
+			<generator class="assigned" ></generator>
+		</id>
+		<property name="name" column="NAME"></property>
+		<property name="joinDate" column="JOIN_DATE"></property>
+		<property name="salary" column="SALARY"></property>
+		<property name="birthday" column="BIRTHDAY"></property>
+		<property name="gender" column="GENDER"></property>
+		<property name="station" column="STATION"></property>
+		<property name="telephone" column="TELEPHONE"></property>
+		<property name="degree" column="DEGREE"></property>
+		<property name="remark" column="REMARK"></property>
+		<property name="orderNo" column="ORDER_NO"></property>
+		
+		<property name="createBy" column="CREATE_BY"></property>
+		<property name="createDept" column="CREATE_DEPT"></property>
+		<property name="createTime" column="CREATE_TIME"></property>
+		<property name="updateBy" column="UPDATE_BY"></property>
+		<property name="updateTime" column="UPDATE_TIME"></property>
+		
+		<many-to-one name="manager" column="MANAGER_ID" class="User"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

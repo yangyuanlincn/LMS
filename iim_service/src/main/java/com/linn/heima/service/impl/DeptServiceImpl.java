@@ -41,11 +41,19 @@ public class DeptServiceImpl implements DeptService{
 	}
 
 	public void deleteById(Class<Dept> entityClass, Serializable id) {
-		
+		List<Dept> list=find("from Dept where parent.id = ?",entityClass,new Object[] {id});
+		if(list != null && list.size() > 0) {
+			for (Dept dept : list) {
+				deleteById(entityClass,dept.getId());
+			}
+		}
+		baseDao.deleteById(entityClass, id);
 	}
 
 	public void delete(Class<Dept> entityClass, Serializable[] ids) {
-		
+		for(Serializable id : ids) {
+			deleteById(entityClass,id);
+		}
 	}
 	
 

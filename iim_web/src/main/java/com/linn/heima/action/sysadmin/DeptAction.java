@@ -71,4 +71,41 @@ public class DeptAction extends BaseAction implements ModelDriven<Dept>{
 		deptService.saveOrUpdate(dept);
 		return "alist";
 	}
+	
+	/**
+	 * 修改页面
+	 */
+	public String toupdate() throws Exception {
+		
+		dept=deptService.get(Dept.class,dept.getId());
+		this.pushVs(dept);
+		List<Dept> deptList=deptService.find("from Dept where state = 1", Dept.class, null);
+		//不显示自身
+		deptList.remove(dept);
+		this.setVs("deptList", deptList);
+		return "toupdate";
+	}
+	
+	/**
+	 * 修改
+	 */
+	public String update() throws Exception {
+		//获取数据库中的数据
+		Dept dept2 = deptService.get(Dept.class, dept.getId());
+		//修改属性
+		dept2.setParent(dept.getParent());
+		dept2.setDeptName(dept.getDeptName());
+		
+		deptService.saveOrUpdate(dept2);
+		return "alist";
+	}
+	
+	/**
+	 * 删除
+	 */
+	public String delete() throws Exception {
+		String[] ids=dept.getId().split(", ");
+		deptService.delete(Dept.class, ids);
+		return "alist";
+	}
 }

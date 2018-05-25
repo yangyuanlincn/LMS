@@ -91,7 +91,7 @@ public class Page<T> {
 		//利用js动态设置分页页码
 		sBuf.append("<script language=\"javascript\">");
 		sBuf.append("	function setPageNo( value ){");
-		sBuf.append("		document.getElementById(\"page.pageNo\").value = value;");
+		sBuf.append("		document.getElementById(\"pageNo\").value = value;");
 		//sBuf.append("		alert(document.getElementById(\"pageNo\").value);");
 		sBuf.append("	}");
 		sBuf.append("</script>");

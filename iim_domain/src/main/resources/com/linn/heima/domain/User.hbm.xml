@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.linn.heima.domain">
+	<class name="User" table="USER_P" dynamic-insert="true" dynamic-update="true">
+	
+		<id name="id" column="USER_ID">
+			<!--hibernate主键生成策略：native, increment,sequence,uuid,assigned,identity  -->
+			<generator class="assigned" ></generator>
+		</id>
+		<property name="userName" column="USER_NAME"></property>
+		<property name="password" column="PASSWORD"></property>
+		<property name="state" column="STATE"></property>
+		
+		<property name="createBy" column="CREATE_BY"></property>
+		<property name="createDept" column="CREATE_DEPT"></property>
+		<property name="createTime" column="CREATE_TIME"></property>
+		<property name="updateBy" column="UPDATE_BY"></property>
+		<property name="updateTime" column="UPDATE_TIME"></property>
+		
+		<!-- 用户和部门 -->
+		<many-to-one name="dept" class="Dept" column="DEPT_ID"></many-to-one>
+		<!-- 用户和用户信息扩展表 -->
+		<one-to-one name="userInfo" class="UserInfo" cascade="all"></one-to-one>
+		
+		<!-- 角色与用户 -->
+		<set name="roles" table="ROLE_USER_P">
+			<key column="USER_ID"></key>
+			<many-to-many class="Role" column="ROLE_ID"></many-to-many>
+		</set>
+	</class>
+	
+</hibernate-mapping>

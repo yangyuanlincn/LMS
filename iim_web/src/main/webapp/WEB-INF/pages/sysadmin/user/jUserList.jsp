@@ -5,39 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
-	<script type="text/javascript" src="${ctx }/js/jquery-1.4.4.js"></script>
-	<script>
-	     function isOnlyChecked(){
-	    	 var checkBoxArray = document.getElementsByName('id');
-				var count=0;
-				for(var index=0; index<checkBoxArray.length; index++) {
-					if (checkBoxArray[index].checked) {
-						count++;
-					}	
-				} 
-			//jquery
-			//var count = $("[input name='id']:checked").size();
-			if(count==1)
-				return true;
-			else
-				return false;
-	     }
-	     function toView(){
-	    	 if(isOnlyChecked()){
-	    		 formSubmit('userAction_toview','_self');
-	    	 }else{
-	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
-	    	 }
-	     }
-	     //实现更新
-	     function toUpdate(){
-	    	 if(isOnlyChecked()){
-	    		 formSubmit('userAction_toupdate','_self');
-	    	 }else{
-	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
-	    	 }
-	     }
-	</script>
 </head>
 
 <body>
@@ -47,11 +14,11 @@
 <div id="innerMenubar">
   <div id="navMenubar">
 <ul>
-<li id="view"><a href="javascript:toView()">查看</a></li>
+<li id="view"><a href="#" onclick="javascript:toView('userAction_toview','_self')">查看</a></li>
 <li id="new"><a href="#" onclick="formSubmit('userAction_tocreate','_self');this.blur();">新增</a></li>
-<li id="update"><a href="#" onclick="javascript:toUpdate()">修改</a></li>
+<li id="update"><a href="#" onclick="javascript:toUpdate('userAction_toupdate','_self')">修改</a></li>
 <li id="update"><a href="#" onclick="formSubmit('userAction_torole','_self');this.blur();">角色</a></li>
-<li id="delete"><a href="#" onclick="formSubmit('userAction_delete','_self');this.blur();">删除</a></li>
+<li id="delete"><a href="#" onclick="javascript:toDelete('userAction_delete','_self');this.blur();">删除</a></li>
 </ul>
   </div>
 </div>
@@ -84,7 +51,7 @@
 ${links}
 	
 	<c:forEach items="${results}" var="o" varStatus="status">
-	<tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" >
+	<tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" align="left">
 		<td><input type="checkbox" name="id" value="${o.id}"/></td>
 		<td>${status.index+1}</td>
 		<td><a href="userAction_toview?id=${o.id}">${o.userName}</a></td>

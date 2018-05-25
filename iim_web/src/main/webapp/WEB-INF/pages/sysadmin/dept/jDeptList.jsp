@@ -5,39 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
-	<script type="text/javascript" src="${ctx }/js/jquery-1.4.4.js"></script>
-	<script>
-	     function isOnlyChecked(){
-	    	 var checkBoxArray = document.getElementsByName('id');
-				var count=0;
-				for(var index=0; index<checkBoxArray.length; index++) {
-					if (checkBoxArray[index].checked) {
-						count++;
-					}	
-				}
-			//jquery
-			//var count = $("[input name='id']:checked").size();
-			if(count==1)
-				return true;
-			else
-				return false;
-	     }
-	     function toView(){
-	    	 if(isOnlyChecked()){
-	    		 formSubmit('deptAction_toview','_self');
-	    	 }else{
-	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
-	    	 }
-	     }
-	     //实现更新
-	     function toUpdate(){
-	    	 if(isOnlyChecked()){
-	    		 formSubmit('deptAction_toupdate','_self');
-	    	 }else{
-	    		 alert("请先选择一项并且只能选择一项，再进行操作！");
-	    	 }
-	     }
-	</script>
 </head>
 
 <body>
@@ -48,10 +15,10 @@
 <div id="innerMenubar">
   <div id="navMenubar">
 <ul>
-<li id="view"><a href="#" onclick="javascript:toView()">查看</a></li>
+<li id="view"><a href="#" onclick="javascript:toView('deptAction_toview','_self')">查看</a></li>
 <li id="new"><a href="#" onclick="formSubmit('deptAction_tocreate','_self');this.blur();">新增</a></li>
-<li id="update"><a href="#" onclick="javascript:toUpdate()">修改</a></li>
-<li id="delete"><a href="#" onclick="formSubmit('deptAction_delete','_self');this.blur();">删除</a></li>
+<li id="update"><a href="#" onclick="javascript:toUpdate('deptAction_toupdate','_self')">修改</a></li>
+<li id="delete"><a href="#" onclick="javascript:toDelete('deptAction_delete','_self');this.blur();">删除</a></li>
 </ul>
   </div>
 </div>

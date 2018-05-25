@@ -17,5 +17,14 @@
 	<bean id="deptService" class="com.linn.heima.service.impl.DeptServiceImpl">
 		<property name="baseDao" ref="baseDao"></property>
 	</bean>
+	<bean id="userService" class="com.linn.heima.service.impl.UserServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="roleService" class="com.linn.heima.service.impl.RoleServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="moduleService" class="com.linn.heima.service.impl.ModuleServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
 	
 </beans>

@@ -13,6 +13,10 @@
 		
 		<!--自关联   子部门与父部门   多对一关系  -->
 		<many-to-one name="parent" class="Dept" column="PARENT_ID"></many-to-one>
-		
+		<!-- 部门和用户 -->
+		<set name="users">
+			<key column="DEPT_ID"></key>
+			<one-to-many class="User" />
+		</set>
 	</class>
 </hibernate-mapping>

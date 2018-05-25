@@ -14,10 +14,10 @@
 <div id="innerMenubar">
   <div id="navMenubar">
 <ul>
-<li id="view"><a href="#" onclick="formSubmit('roleAction_toview','_self');this.blur();">查看</a></li>
+<li id="view"><a href="#" onclick="javascript:toView('roleAction_toview','_self');this.blur();">查看</a></li>
 <li id="new"><a href="#" onclick="formSubmit('roleAction_tocreate','_self');this.blur();">新增</a></li>
-<li id="update"><a href="#" onclick="formSubmit('roleAction_toupdate','_self');this.blur();">修改</a></li>
-<li id="delete"><a href="#" onclick="formSubmit('roleAction_delete','_self');this.blur();">删除</a></li>
+<li id="update"><a href="#" onclick="javascript:toUpdate('roleAction_toupdate','_self');this.blur();">修改</a></li>
+<li id="delete"><a href="#" onclick="javascript:toDelete('roleAction_delete','_self');this.blur();">删除</a></li>
 <li id="new"><a href="#" onclick="formSubmit('roleAction_tomodule','_self');this.blur();" title="分配权限">权限</a></li>
 </ul>
   </div>
@@ -51,7 +51,7 @@
 	<tbody class="tableBody" >
 	${links }
 	<c:forEach items="${results}" var="o" varStatus="status">
-	<tr class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" >
+	<tr align="left" class="odd" onmouseover="this.className='highlight'" onmouseout="this.className='odd'" >
 		<td><input type="checkbox" name="id" value="${o.id}"/></td>
 		<td>${status.index+1}</td>
 		<td>${o.id}</td>
