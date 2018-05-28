@@ -1,11 +1,15 @@
 package com.linn.heima.action.sysadmin;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.linn.heima.action.BaseAction;
 import com.linn.heima.domain.Dept;
+import com.linn.heima.domain.Role;
 import com.linn.heima.domain.User;
 import com.linn.heima.service.DeptService;
+import com.linn.heima.service.RoleService;
 import com.linn.heima.service.UserService;
 import com.linn.heima.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
@@ -24,6 +28,23 @@ public class UserAction extends BaseAction implements ModelDriven<User>{
 	private DeptService deptService;
 	public void setDeptService(DeptService deptService) {
 		this.deptService = deptService;
+	}
+	
+	private RoleService roleService;
+	
+
+	public void setRoleService(RoleService roleService) {
+		this.roleService = roleService;
+	}
+
+	private String[] roleIds;
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setRoleIds(String[] roleIds) {
+		this.roleIds = roleIds;
 	}
 
 	//分页对象
@@ -115,6 +136,47 @@ public class UserAction extends BaseAction implements ModelDriven<User>{
 	public String delete() throws Exception {
 		String[] ids=user.getId().split(", ");
 		userService.delete(User.class, ids);
+		return "alist";
+	}
+	
+	/**
+	 * 显示用户角色
+	 */
+	public String torole() throws Exception {
+		//获取用户
+		user = userService.get(User.class, user.getId());
+		this.pushVs(user);
+		//获取用户的角色
+		Set<Role> roleSet = user.getRoles();
+		//将用户的角色名组成字符串
+		StringBuilder sb = new StringBuilder();
+		for (Role role : roleSet) {
+			sb.append(role.getName()+",");
+		}
+		this.setVs("roleStr", sb.toString());
+		
+		System.out.println(sb.toString());
+		//获取所有的角色
+		List<Role> roleList = roleService .find("from Role", Role.class, null);
+		this.setVs("roleList", roleList);
+		return "torole";
+	}
+	
+	/**
+	 * 保存角色
+	 */
+	public String role() throws Exception {
+		Set<Role> roles = new HashSet<Role>();
+		//根据id获取所有角色，并加入set集合
+		for (String id : roleIds) {
+			roles.add(roleService.get(Role.class, id));
+		}
+		
+		//获取用户并设置角色集合
+		user = userService.get(User.class, user.getId());
+		user.setRoles(roles);
+		
+		userService.saveOrUpdate(user);
 		return "alist";
 	}
 }

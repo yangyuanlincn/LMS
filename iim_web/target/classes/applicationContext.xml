@@ -68,6 +68,7 @@
 	<import resource="classpath:applicationContext-action.xml"></import>
 	<import resource="classpath:applicationContext-dao.xml"></import>
 	<import resource="classpath:applicationContext-service.xml"></import>
+	<import resource="classpath:applicationContext-shiro.xml"></import>
 	<!-- <import resource="classpath:spring/applicationContext-activiti.xml"></import> -->
 	
 </beans>

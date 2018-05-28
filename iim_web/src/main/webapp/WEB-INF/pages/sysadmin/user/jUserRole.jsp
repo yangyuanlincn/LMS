@@ -9,7 +9,6 @@
 	   span{display: inline-block;width: 200px}
 	</style>
 </head>
-
 <body>
 <form name="icform" method="post">
 	<input type="hidden" name="id" value="${id}"/>
@@ -43,13 +42,12 @@
 	<c:forEach items="${roleList}" var="o">
 		<span style="padding:3px;">
 		<input type="checkbox" name="roleIds" value="${o.id}" class="input"
-			<c:if test="${fn:contains(userRoleStr,o.name)}">checked</c:if>
+			<c:if test="${fn:contains(roleStr,o.name)}">checked</c:if>
 		>
+		
 		${o.name}
 		</span>
-		
 	</c:forEach>
-	
 </div>
  
 </div>

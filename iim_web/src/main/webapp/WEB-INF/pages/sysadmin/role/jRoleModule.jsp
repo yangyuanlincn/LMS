@@ -24,20 +24,11 @@
 		};
 		
 		$(document).ready(function() {
-			$.ajax( {
-				url : "${ctx}/sysadmin/roleAction_roleModuleJsonStr.action?id=${id}",
-				type : "get",
-				dataType : "text",
-				success : initZtree
-			});
+			$.post("${ctx}/sysadmin/roleAction_roleModuleStr.action",{"id":"${id}"},function(data){
+				zTreeObj = $.fn.zTree.init($('#jkTree'), setting, data);	//jkTree 树的id，支持多个树
+				zTreeObj.expandAll(true);		//展开所有树节点
+			},"json");
 		});
-		
-		//初始化ZTree树
-		function initZtree(data) {
-			var zNodes = eval("(" + data + ")");		//动态js语句
-			zTreeObj = $.fn.zTree.init($('#jkTree'), setting, zNodes);	//jkTree 树的id，支持多个树
-			zTreeObj.expandAll(true);		//展开所有树节点
-		}
 		
 		//获取所有选择的节点
 		function submitCheckedNodes() {

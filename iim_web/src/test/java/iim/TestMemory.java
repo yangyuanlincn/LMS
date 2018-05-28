@@ -1,4 +1,4 @@
-package com.linn.heima.test;
+package iim;
 
 import org.junit.Test;
 

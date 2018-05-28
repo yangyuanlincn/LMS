@@ -1,9 +1,17 @@
 package com.linn.heima.action.sysadmin;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.linn.heima.action.BaseAction;
+import com.linn.heima.domain.Module;
 import com.linn.heima.domain.Role;
+import com.linn.heima.service.ModuleService;
 import com.linn.heima.service.RoleService;
 import com.linn.heima.utils.Page;
 import com.opensymphony.xwork2.ModelDriven;
@@ -19,6 +27,17 @@ public class RoleAction extends BaseAction implements ModelDriven<Role>{
 		this.roleService = roleService;
 	}
 
+	
+	private ModuleService moduleService;
+	public void setModuleService(ModuleService moduleService) {
+		this.moduleService = moduleService;
+	}
+
+	
+	private String moduleIds;
+	public void setModuleIds(String moduleIds) {
+		this.moduleIds = moduleIds;
+	}
 
 	//分页对象
 	private Page<Role> page = new Page<Role>();
@@ -101,5 +120,73 @@ public class RoleAction extends BaseAction implements ModelDriven<Role>{
 		String[] ids=role.getId().split(", ");
 		roleService.delete(Role.class, ids);
 		return "alist";
+	}
+	
+	/**
+	 * 显示模块
+	 */
+	public String tomodule() throws Exception {
+		//获取角色
+		role = roleService.get(Role.class, role.getId());
+		this.pushVs(role);
+		return "tomodule";
+	}
+	
+	/**
+	 * 角色模块保存
+	 */
+	public String module() throws Exception {
+		//获取角色
+		role = roleService.get(Role.class, role.getId());
+		
+		Set<Module> modules = new HashSet<Module>();
+		String[] ids = moduleIds.split(",");
+		for (String id : ids) {
+			modules.add(moduleService.get(Module.class, id));
+		}
+		role.setModules(modules);
+		
+		roleService.saveOrUpdate(role);
+		return "alist";
+	}
+	
+	/**
+	 * 返回模块json字符串
+	 * @return
+	 * @throws Exception
+	 */
+	public String roleModuleStr()throws Exception {
+		//获取角色
+		role = roleService.get(Role.class, role.getId());
+		//获取模块集合
+		Set<Module> modules = role.getModules();
+		
+		//获取所有模块
+		List<Module> moduleList = moduleService.find("from Module where state = 1", Module.class, null);
+		//拼接json字符串
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		for (Module module : moduleList) {
+			sb.append("{\"id\":\"").append(module.getId());
+			sb.append("\",\"pId\":\"").append(module.getParentId());
+			sb.append("\",\"name\":\"").append(module.getName());
+			if(modules.contains(module)) {
+				sb.append("\",\"checked\":\"").append(true);
+			}else {
+				sb.append("\",\"checked\":\"").append(false);
+			}
+			sb.append("\"}");
+			sb.append(",");
+		}
+		String str = sb.toString();
+		str=str.substring(0, str.length()-1);
+		
+		str=str+"]";
+		
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.setContentType("application/json;charset=utf-8");
+		response.setHeader("Cache-Control", "no-cache");
+		response.getWriter().print(str);
+		return null;
 	}
 }

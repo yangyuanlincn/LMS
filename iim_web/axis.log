@@ -1,0 +1,33 @@
+2018-05-28 20:25:07,011 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4563e9ab: startup date [Mon May 28 20:25:07 CST 2018]; root of context hierarchy
+2018-05-28 20:25:07,074 63     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:25:07,585 574    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:25:39,201 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@45c8e616: startup date [Mon May 28 20:25:39 CST 2018]; root of context hierarchy
+2018-05-28 20:25:39,267 66     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:25:39,644 443    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:26:24,678 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@45c8e616: startup date [Mon May 28 20:26:24 CST 2018]; root of context hierarchy
+2018-05-28 20:26:24,753 75     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:26:25,111 433    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:45:08,343 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cf10a6f: startup date [Mon May 28 20:45:08 CST 2018]; root of context hierarchy
+2018-05-28 20:45:08,399 56     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:45:08,738 395    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:47:54,169 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:47:54 CST 2018]; root of context hierarchy
+2018-05-28 20:47:54,227 58     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:47:54,566 397    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:50:36,697 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:50:36 CST 2018]; root of context hierarchy
+2018-05-28 20:50:36,748 51     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:50:37,098 401    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:51:16,888 1      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:51:16 CST 2018]; root of context hierarchy
+2018-05-28 20:51:16,947 60     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:51:17,321 434    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:52:36,651 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:52:36 CST 2018]; root of context hierarchy
+2018-05-28 20:52:36,707 56     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:52:37,067 416    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:53:38,995 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:53:38 CST 2018]; root of context hierarchy
+2018-05-28 20:53:39,051 56     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:53:39,388 393    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:54:42,259 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:54:42 CST 2018]; root of context hierarchy
+2018-05-28 20:54:42,316 57     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:54:42,658 399    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
+2018-05-28 20:55:27,578 0      [           main] INFO  ClassPathXmlApplicationContext  - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2ff4f00f: startup date [Mon May 28 20:55:27 CST 2018]; root of context hierarchy
+2018-05-28 20:55:27,633 55     [           main] INFO  ry.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from class path resource [applicationContext-mail.xml]
+2018-05-28 20:55:28,006 428    [           main] INFO  .PropertyPlaceholderConfigurer  - Loading properties file from class path resource [mail.properties]
