@@ -30,7 +30,40 @@
 		<property name="moduleService" ref="moduleService"></property>
 	</bean>
 	
+	<bean id="contractAction" class="com.linn.heima.action.cargo.ContractAction" scope="prototype">
+		<property name="contractService" ref="contractService"></property>
+	</bean>
+	<bean id="contractProductAction" class="com.linn.heima.action.cargo.ContractProductAction" scope="prototype">
+		<property name="factoryService" ref="factoryService"></property>
+		<property name="contractProductService" ref="contractProductService"></property>
+	</bean>
+	<bean id="extCproductAction" class="com.linn.heima.action.cargo.ExtCproductAction" scope="prototype">
+		<property name="factoryService" ref="factoryService"></property>
+		<property name="extCproductService" ref="extCproductService"></property>
+	</bean>
+	<bean id="factoryAction" class="com.linn.heima.action.cargo.FactoryAction" scope="prototype">
+		<property name="factoryService" ref="factoryService"></property>
+	</bean>
 	
+	<bean id="outProductAction" class="com.linn.heima.action.cargo.OutProductAction" scope="prototype">
+		<property name="contractProductService" ref="contractProductService"></property>
+	</bean>
+	
+	<bean id="extEproductAction" class="com.linn.heima.action.cargo.ExtEproductAction" scope="prototype">
+		<property name="extEproductService" ref="extEproductService"></property>
+	</bean>
+	<bean id="exportAction" class="com.linn.heima.action.cargo.ExportAction" scope="prototype">
+	   <property name="exportProductService" ref="exportProductService"></property>
+		<property name="contractService" ref="contractService"></property>
+		<property name="exportService" ref="exportService"></property>
+	</bean>
+	<bean id="exportProductAction" class="com.linn.heima.action.cargo.ExportProductAction" scope="prototype">
+		<property name="exportProductService" ref="exportProductService"></property>
+	</bean>
+	
+	<bean id="statChartAction" class="com.linn.heima.action.stat.StatChartAction" scope="prototype">
+		<property name="sqlDao" ref="sqlDao"></property>
+	</bean>
 	<bean id="loginAction" class="com.linn.heima.action.LoginAction" scope="prototype">
 	</bean>
 	<bean id="homeAction" class="com.linn.heima.action.HomeAction" scope="prototype">

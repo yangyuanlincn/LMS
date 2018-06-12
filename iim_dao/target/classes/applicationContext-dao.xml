@@ -20,5 +20,13 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<!-- jdbcTemplate模板的配置 -->
+	<bean id="jdbcTemplate"  class="org.springframework.jdbc.core.JdbcTemplate">
+	     <property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<bean id="sqlDao" class="com.linn.heima.dao.springdao.SqlDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
 	
 </beans>

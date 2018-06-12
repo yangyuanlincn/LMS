@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<s:debug></s:debug>
 <form name="icform" method="post">
      <input type="hidden" name="id" value="${id }">
 <div id="menubar">

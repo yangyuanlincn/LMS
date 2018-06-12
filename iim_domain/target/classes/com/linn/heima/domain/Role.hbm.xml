@@ -28,7 +28,7 @@
 		<!-- 模块与角色 -->
 		<set name="modules" table="ROLE_MODULE_P">
 			<key column="ROLE_ID"></key>
-			<many-to-many class="Module" column="MODULE_ID"></many-to-many>
+			<many-to-many class="Module" column="MODULE_ID" order-by="ORDER_NO"></many-to-many>
 		</set>
 	</class>
 	

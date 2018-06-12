@@ -25,5 +25,15 @@
 		<mapping resource="com/linn/heima/domain/Role.hbm.xml"></mapping>
 		<mapping resource="com/linn/heima/domain/Module.hbm.xml"></mapping>
 		
+		<!-- cargo -->
+		<mapping resource="com/linn/heima/domain/Contract.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/ContractProduct.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/ExtCproduct.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/Factory.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/Export.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/ExportProduct.hbm.xml"></mapping>
+		<mapping resource="com/linn/heima/domain/ExtEproduct.hbm.xml"></mapping>
+		
+		
 	</session-factory>
 	</hibernate-configuration>

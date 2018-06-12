@@ -6,6 +6,11 @@
 	<link rel="stylesheet" rev="stylesheet" type="text/css" href="${ctx}/skin/default/css/login.css" media="all" />
 	<script src="${ctx}/components/pngfix/DD_belatedPNG.js"></script>
 	<script> DD_belatedPNG.fix('*'); </script>
+	<script type="text/javascript">
+		if(self!=top){
+			top.loaction = self.location;
+		}
+	</script>
 </head>
 
 <body>

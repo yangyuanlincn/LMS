@@ -80,7 +80,7 @@ public class Page<T> {
     	this.url = url;
     }
 
-    public String links;
+    public String links; 
 	public String getLinks() {
 		StringBuffer sBuf = new StringBuffer();
 		int curPageNo = this.pageNo;		//当前页
@@ -91,11 +91,11 @@ public class Page<T> {
 		//利用js动态设置分页页码
 		sBuf.append("<script language=\"javascript\">");
 		sBuf.append("	function setPageNo( value ){");
-		sBuf.append("		document.getElementById(\"pageNo\").value = value;");
+		sBuf.append("		document.getElementById(\"page.pageNo\").value = value;");
 		//sBuf.append("		alert(document.getElementById(\"pageNo\").value);");
 		sBuf.append("	}");
 		sBuf.append("</script>");
-		sBuf.append("<input type=\"hidden\" id=\"pageNo\" name=\"page.pageNo\" value=\"").append(curPageNo).append("\">");		//分页参数：当前页隐藏域
+		sBuf.append("<input type=\"hidden\" id=\"page.pageNo\" name=\"page.pageNo\" value=\"").append(curPageNo).append("\">");		//分页参数：当前页隐藏域
 
 		
 		sBuf.append("&nbsp;第").append(curPageNo).append("页 / 共").append(this.totalPage).append("页&nbsp;");

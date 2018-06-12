@@ -26,5 +26,28 @@
 	<bean id="moduleService" class="com.linn.heima.service.impl.ModuleServiceImpl">
 		<property name="baseDao" ref="baseDao"></property>
 	</bean>
+	<bean id="contractProductService" class="com.linn.heima.service.impl.ContractProductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="contractService" class="com.linn.heima.service.impl.ContractServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="extCproductService" class="com.linn.heima.service.impl.ExtCproductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="factoryService" class="com.linn.heima.service.impl.FactoryServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="exportService" class="com.linn.heima.service.impl.ExportServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="exportProductService" class="com.linn.heima.service.impl.ExportProductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	<bean id="extEproductService" class="com.linn.heima.service.impl.ExtEproductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
 	
 </beans>

@@ -7,6 +7,8 @@ import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.linn.heima.domain.User;
+import com.linn.heima.utils.SysConstant;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -64,4 +66,7 @@ public class BaseAction extends ActionSupport implements RequestAware, SessionAw
 		ActionContext.getContext().put(key, obj);
 	}
 
+	public User getCurrUser() {
+		return (User) session.get(SysConstant.CURRENT_USER_INFO);
+	}
 }

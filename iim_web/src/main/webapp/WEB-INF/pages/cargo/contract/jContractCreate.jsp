@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<s:debug></s:debug>
 <form name="icform" method="post">
 
 <div id="menubar">

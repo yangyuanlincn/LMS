@@ -89,6 +89,9 @@ public class BaseDaoImpl implements BaseDao{
 			deleteById(entityClass, s);
 		}
 	}
+	public <T> void delete(T entity) {
+		this.getSession().delete(entity);
+	}
 
 
 }

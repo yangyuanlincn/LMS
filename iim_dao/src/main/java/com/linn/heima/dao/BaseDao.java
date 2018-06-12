@@ -32,5 +32,6 @@ public interface BaseDao {
 	public <T> void deleteById(Class<T> entityClass, Serializable id);
 	//批量删除
 	public <T> void delete(Class<T> entityClass, Serializable[] ids);
+	public <T> void delete(T entity);
 
 }
